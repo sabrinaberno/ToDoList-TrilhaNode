@@ -1,0 +1,22 @@
+{
+  "name": "todolist-trilhanode",
+  "version": "1.0.0",
+  "description": "Projeto da Trilha Node da Orc'estra",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabrinaberno/ToDoList-TrilhaNode.git"
+  },
+  "author": "Sabrina Berno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sabrinaberno/ToDoList-TrilhaNode/issues"
+  },
+  "homepage": "https://github.com/sabrinaberno/ToDoList-TrilhaNode#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
