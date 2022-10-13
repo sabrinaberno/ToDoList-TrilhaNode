@@ -4,7 +4,8 @@
   "description": "Projeto da Trilha Node da Orc'estra",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,10 @@
   },
   "homepage": "https://github.com/sabrinaberno/ToDoList-TrilhaNode#readme",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
