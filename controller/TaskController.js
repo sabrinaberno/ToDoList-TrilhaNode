@@ -10,7 +10,6 @@ const getAllTasks = async (req, res) => {
 
     const taskList = await Task.find();
 
-    console.log(taskList);
     return res.render("index", {
       taskList,
       task: null,
