@@ -1,18 +1,16 @@
 const Task = require("../models/Task");
 let message = "";
+let type = ""; 
 
 const getAllTasks = async (req, res) => {
   try {
-     setTimeout(() => {
-        message = "";
-  }, 1000);
-
     const taskList = await Task.find();
     return res.render("index", {
       taskList,
       task: null,
       taskDelete: null,
       message,
+      type,
     });
   } catch (err) {
     res.status(500).send({ error: err.message });
@@ -43,6 +41,7 @@ const getById = async (req, res) => {
       res.render("index", { task, taskDelete: null, taskList, message, type });
     } else {
       const taskDelete = await Task.findOne({ _id: req.params.id });
+      res.render("index", { task: null, taskDelete, taskList, message, type });
     }
   } catch (err) {
     res.status(500).send({ error: err.message });
