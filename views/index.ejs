@@ -11,35 +11,27 @@
   </head>
 
   <body>
+    
+    <% if(message != "") { %>
+      <%- include('./components/message', {message: message, type: type})%>
+    <% } %>
+
     <header>
-      <% if (task == null) { %>
-      <h1>TO DO LIST</h1>
-      <form action="/create" method="post">
-        <input
-          type="text"
-          name="task"
-          id="task"
-          placeholder="Insira uma tarefa"
-        />
-        <button id="addButton" type="submit">Adicionar</button>
-      </form>
 
+      <% if (task==null) { %>
+        <%- include('./components/form', {titleForm: "TO DO LIST", action: "create", value: "", idBtn: "addButton", nameBtn: "Adicionar"})%>
       <% } else { %>
-        <h1>EDITAR TAREFA</h1>
-      <form action="/updateOne/<%= task._id %>" method="post">
-        <input type="text" name="task" id="task" value="<%= task.task %>" />
-        <button id="updateButton" type="submit">Atualizar</button>
-      </form>
-
+        <%- include('./components/form', {titleForm: "EDITAR TAREFA", action: `updateOne/${task._id}`, value: task.task, idBtn: "updateButton", nameBtn: "Atualizar"}) %>
       <% } %>
+
     </header>
 
     <section id="tasks">
       <ul>
         <% taskList.forEach((task) => { %>
-        <li>
+          <li class="check-<%= task.check %>">
           <div>
-            <a href="/"><%= task.task %> </a>
+            <a href="/check/<%= task._id %>" class="check-<%= task.check %>"><%= task.task %></a>
             <span>Criando em <%= task.date.toLocaleDateString('pt-br') %></span>
 
           </div>
@@ -55,22 +47,8 @@
     </section>
 
     <% if(taskDelete != null) { %>
-    <section id="modal">
-      <div id="card">
-
-        <div id="head">
-          <h2>Confirmação</h2>
-          <a id="close" href="/"><i class="bi bi-x-lg"></i></a>
-      </div>
-      <hr>
-      <p>Tem certeza que quer apagar a tarefa <% taskDelete.task %>? </p>
-      <div id="btns">
-          <a id="btnNot" href="/">Não</a>
-          <a id="btnYes" href="/deleteOne/<%= taskDelete._id %>">Sim</a>
-      </div>
-     </div>
- </section>
- <% } %>
+        <%- include('./components/modalDel', {task: taskDelete})  %>
+    <% } %>
 
     <script src="script.js"></script>
   </body>

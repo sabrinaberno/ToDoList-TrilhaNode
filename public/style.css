@@ -79,7 +79,7 @@ button:hover {
   ul li a {
     text-decoration: none;
     color: #6B1F01;
-    padding-left: 0.2rem;
+    padding-left: 2rem;
   }
   
   ul li span {
@@ -260,7 +260,7 @@ button:hover {
   }
   
   ul li.check-true{
-    background-color: #888888;
+    background-color: #bb9e9e;
     color: #fff;
     text-decoration: line-through;
   }
@@ -269,9 +269,9 @@ button:hover {
     content: "";
     position: absolute;
     border: #fff solid;
-    top: 17px;
+    top: 22px;
     left: 16px;
-    height: 15px;
+    height: 16px;
     width: 7px;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
@@ -281,9 +281,9 @@ button:hover {
     content: "";
     position: absolute;
     border: #fff solid;
-    top: 20px;
-    left: 16px;
-    height: 13px;
-    width: 13px;
+    top: 26px;
+    left: 15px;
+    height: 15px;
+    width: 15px;
     border-width: 2px;
   }
