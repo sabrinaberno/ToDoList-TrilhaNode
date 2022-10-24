@@ -287,3 +287,220 @@ button:hover {
     width: 15px;
     border-width: 2px;
   }
+
+
+
+.container-input.actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.container-input.actions > .esqueci {
+  color: #8a0000;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.container-input.actions > .lembrar {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.container-input.actions .container {
+  display: block;
+  position: relative;
+  padding-left: 26px;
+  cursor: pointer;
+}
+
+.container-input.actions .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container-input.actions .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: solid 1px #8a0000;
+  border-radius: 4px;
+}
+.container-input.actions .container:hover input ~ .checkmark {
+  border: solid 1px #868686;
+}
+.container-input.actions .container input:checked ~ .checkmark {
+  background-color: #a02a2a;
+  border-color: #8a0000;
+}
+
+.container-input.actions .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container-input.actions .container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container-input.actions .container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #006B59;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.container-input.buttons {
+  margin-top: 20px;
+}
+
+.container-input.buttons > .loginBtn {
+  background-color: #8a0000;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.container-input.buttons > .create-account {
+  margin-top: 14px;
+  color: #8a0000;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.04rem;
+}
+.container-input.buttons > .create-account > a {
+  color:#8a0000;
+  font-weight: 500;
+}
+
+.container-input.text {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.container-input.text input[type=text] {
+  transition: border-size 0.6s;
+  padding: 12px 12px 12px 37px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: solid 1px #242323;
+  color: #383838;
+}
+
+.container-input.text input[type=password] {
+  transition: border-size 0.6s;
+  padding: 12px 12px 12px 37px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: solid 1px #242323;
+  color: #383838;
+}
+
+.container-input.text input[type=text]:focus {
+  border: 1px solid #8a0000;
+}
+
+.container-input.text label:not(.lembrar) {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-container {
+  padding: 55px 119px;
+  background-color: #27B89F;
+  border-radius: 4px;
+}
+.form-container .form-header {
+  display: inline;
+}
+.form-container .form-header > .title {
+  display: flex;
+  font-size: 24px;
+  font-weight: 600;
+}
+.form-container .form-header > .title > h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.form-container .form-header > .title img {
+  margin-right: 10px;
+}
+.form-container .form-header p {
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+#all { 
+  font-size: 18px;
+  overflow-x: hidden;
+  color:#eaeef2;
+  padding: 3rem;
+}
+
+button, input {
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  color: var(--text-color);
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 50px;
+}
+
+main {
+  padding: 40px;
+}
+
+#login-container {
+  flex: 1;
+  background-color: #006B59;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+#login-container nav {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
